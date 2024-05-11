@@ -6,11 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\notification;
 // use App\Mail\SendMail;
 // use Illuminate\Support\Facades\Mail;
 
 class DB_Ops extends Controller
-{
+{   
+    // public function test(){
+    //     Mail::to('marwan.ah.ab@gmail.com')->send(new MailableName());
+    // }
     
     public function store(Request $request){
         echo 'yarab';
@@ -31,6 +37,8 @@ class DB_Ops extends Controller
         $address = $request->input('address');
         $password = Hash::make($request->input('password')) ;
         $email = $request->input('email');
+
+        Mail::to('marawan.ah.ab@gmail.com')->send(new notification($user_name));
 
         // Inside your controller or wherever you want to send the email
         // $emailData = ['name' => 'John Doe',
