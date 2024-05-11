@@ -87,7 +87,6 @@
         </form>
     </div>
 
-    @endsection;
 
     {{-- @include('footer'); --}}
 
@@ -212,6 +211,7 @@
 
 
     </script>
+    @endsection;
 
 </body>
 </html>
