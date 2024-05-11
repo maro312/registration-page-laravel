@@ -2,46 +2,41 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    public $timestamps = false;
+    protected $table = 'user'; // Assuming the table name is 'user'
+    protected $primaryKey = 'user_name';
     protected $fillable = [
-        'name',
+        'full_name',
+        'user_name',
+        'birthdate',
+        'phone',
+        'address',
+        'password',
         'email',
-        'password',
+        'user_image'
+        // Add any other fields that can be mass-assigned here
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password', // Hide password from JSON responses for security
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    // Define relationships if needed
+    // For example:
+    // public function posts()
+    // {
+    //     return $this->hasMany(Post::class);
+    // }
+
+    // You might also need mutators or accessors for custom logic
+
+    // For example, hashing the password before saving it to the database
+    // public function setPasswordAttribute($value)
+    // {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
 }
