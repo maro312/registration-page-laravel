@@ -10,8 +10,8 @@
 <body>
 
     {{-- @include('header'); --}}
-    @extends('content')
-    @section
+    @extends('layouts.master');
+    @section('content');
     <div class="registration-form">
         <h2>Registration Form</h2>
 
@@ -87,6 +87,7 @@
         </form>
     </div>
 
+    @endsection;
 
     {{-- @include('footer'); --}}
 
@@ -211,7 +212,6 @@
 
 
     </script>
-    @endsection
 
 </body>
 </html>
