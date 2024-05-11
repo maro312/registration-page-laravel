@@ -8,10 +8,8 @@
 
 </head>
 <body>
-
-    {{-- @include('header'); --}}
-    @extends('layouts.master');
-    @section('content');
+    @extends('layouts.master')
+    @section('content')
     <div class="registration-form">
         <h2>Registration Form</h2>
 
@@ -88,7 +86,6 @@
     </div>
 
 
-    {{-- @include('footer'); --}}
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
     <script src = 'API_Ops.js'></script>
@@ -211,7 +208,7 @@
 
 
     </script>
-    @endsection;
+    @endsection
 
 </body>
 </html>
