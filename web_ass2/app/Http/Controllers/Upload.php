@@ -23,10 +23,15 @@ class Upload extends Controller
             echo $user;
             if ($user) {
                 $user->user_image = (string)$target_file;
-
+                try{
                     $user->save();
-    
-            } 
+                }
+                catch(\Exception $e){
+                    return response()->json(['message' => 'Fail', 'error' => $e->getMessage()], 500);
+                }       
+            } else {
+                throw new Exception("Sorry, there was an error uploading your file.");
+            }
             // Move the uploaded file to the specified directory
             if ($file->move(public_path($target_dir), $target_file)) {
                 return response()->json(['message' => 'File uploaded successfully']);
