@@ -40,9 +40,12 @@ class Upload extends Controller
                 }       
                 //
             
-                return response()->json(['message' => 'Record updated successfully']);
+                //return response()->json(['message' => 'Record updated successfully']);
+                echo 'Record updated successfully';
+
             } else {
-                return response()->json(['message' => 'User not found'], 404);
+                //return response()->json(['message' => 'User not found'], 404);
+                echo 'User not found';
             }
             // Move the uploaded file to the specified directory
             if ($file->move(public_path($target_dir), $target_file)) {
