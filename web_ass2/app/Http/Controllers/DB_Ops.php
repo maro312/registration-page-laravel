@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\testUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\notification;
+use Illuminate\Database\UniqueConstraintViolationException;
 // use App\Mail\SendMail;
 // use Illuminate\Support\Facades\Mail;
 
@@ -19,7 +20,6 @@ class DB_Ops extends Controller
     // }
     
     public function store(Request $request){
-        echo 'yarab';
         // $request->validate([
         //     'full_name' => 'required',
         //     'user_name' => 'required|unique:user',
@@ -38,7 +38,7 @@ class DB_Ops extends Controller
         $password = Hash::make($request->input('password')) ;
         $email = $request->input('email');
 
-        Mail::to('marawan.ah.ab@gmail.com')->send(new notification($user_name));
+        Mail::to('esla889900@gmail.com')->send(new notification($user_name));
 
         // Inside your controller or wherever you want to send the email
         // $emailData = ['name' => 'John Doe',
@@ -66,7 +66,7 @@ class DB_Ops extends Controller
         //echo $user_image;
         
         try {
-            $user = new User;
+            $user = new testUser();
             $user->full_name = $fullname;
             $user->user_name = $user_name;
             $user->birthdate = $birthdate;
@@ -78,7 +78,10 @@ class DB_Ops extends Controller
 
             return response()->json(['message' => 'Success'], 200);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Fail', 'error' => $e->getMessage()], 500);
+            if ($e instanceof UniqueConstraintViolationException) {
+                return response()->json(['message' => 'Fail', 'error' => 'Username already exists'], 400);
+            }
+            return response()->json(['message' => 'Fail', 'error' => $e::class], 500);
             //echo $request;
         }
         

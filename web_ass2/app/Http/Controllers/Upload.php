@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\testUser;
 use Exception;
 
 class Upload extends Controller
@@ -14,13 +14,12 @@ class Upload extends Controller
         if ($request->hasFile('user_image') && $request->file('user_image')->isValid()) {
             $target_dir = "uploads/";
             $file = $request->file('user_image');
-            echo public_path($target_dir);
+
             $target_file = $target_dir . basename($file->getClientOriginalName());
-            echo "\n";
-            echo $target_file;
+
             $user_name = $request->input('user_name');
-            $user = User::where('user_name', $user_name)->first();
-            echo $user;
+            $user = testUser::where('user_name', $user_name)->first();
+
             if ($user) {
                 $user->user_image = (string)$target_file;
                 try{
