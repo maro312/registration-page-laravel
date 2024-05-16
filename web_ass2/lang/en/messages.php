@@ -5,7 +5,7 @@ return [
     'header' => 'Welcome to the Registration Page',
     "enter_your" => "Enter Your" , 
     "full_name" => 'Full Name' , 
-    "user_name" => 'Use Name' ,
+    "user_name" => 'User Name' ,
     "birth_date" => 'Birth Date',
     "phone" => 'Phone', 
     "address" => 'Address', 

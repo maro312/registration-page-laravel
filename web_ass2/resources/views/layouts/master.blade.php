@@ -12,37 +12,15 @@
 
 </head>
 <body>
-    <!-- <header>
-        <h3>{{__('messages.header')}}</h3>
-        <style>
-            header {
-                text-align: center;
-                padding: 4px;
-                background-color: #007bff;
-                color: white;
-                margin-bottom: 8px;
-            }
-        </style>
-    </header> -->
+
 
     @yield('content');
 
-    <!-- <footer>
-        <h3>{{__('messages.footer')}}</h3>
-        <style>
-            footer {
-                text-align: center;
-                padding: 4px;
-                background-color: #007bff;
-                color: white;
-                margin-top: 8px;
-            }
-        </style>
-    </footer> -->
+
 
 </body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
-<script src = 'js/API_Ops.js'></script>
-<script scr = "js/app.js">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src = 'js/API_Ops.js'></script>
+<script type="text/javascript" src = "js/app.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

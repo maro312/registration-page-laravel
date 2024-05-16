@@ -3,16 +3,16 @@
 
 <div>
             <div class="header">
-                <img src="/public/assests/logo.png" alt="Header Image">
+                <img src="/assests/logo.png" alt="Header Image">
             </div>
 
             <div class="container">
 
                 <form id="registration-form" method="post">
-
+                    @csrf
                     <div class="nav">
                         <div class="fcai-logo">
-                            <img src="/public/assests/Faculty of Computers and AI Logo.jpg" alt="FCAI Logo">
+                            <img src="/assests/Faculty of Computers and AI Logo.jpg" alt="FCAI Logo">
                             <h2>FCAI</h2>
                         </div>
                         <div class="dropdown">
@@ -114,4 +114,3 @@
         </div>
 
 @endsection
-

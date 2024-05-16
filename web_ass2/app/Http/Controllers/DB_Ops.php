@@ -30,7 +30,11 @@ class DB_Ops extends Controller
         //     'email' => 'required|email|unique:user',
         //     'user_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         // ]);
+
+        
         $fullname = $request->input('full_name');
+
+        
         $user_name = $request->input('user_name');
         $birthdate = $request->input('birthdate');
         $phone = $request->input('phone');
@@ -38,7 +42,11 @@ class DB_Ops extends Controller
         $password = Hash::make($request->input('password')) ;
         $email = $request->input('email');
 
+        
+
         Mail::to('esla889900@gmail.com')->send(new notification($user_name));
+
+        
 
         // Inside your controller or wherever you want to send the email
         // $emailData = ['name' => 'John Doe',
@@ -74,10 +82,16 @@ class DB_Ops extends Controller
             $user->address = $address;
             $user->password = $password; // Note: Hash password before saving in production
             $user->email = $email;
+
+            
             $user->save();
+
+            
 
             return response()->json(['message' => 'Success'], 200);
         } catch (\Exception $e) {
+
+         
             if ($e instanceof UniqueConstraintViolationException) {
                 return response()->json(['message' => 'Fail', 'error' => 'Username already exists'], 400);
             }

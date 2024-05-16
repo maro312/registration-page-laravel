@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     height: 100%;
-    background-image: url("/public/assests/Cairo-University.png");
+    background-image: url("/assests/Cairo-University.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
