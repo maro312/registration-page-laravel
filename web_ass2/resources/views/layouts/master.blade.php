@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Registration Form</title>
-    
+
 
 </head>
 <body>
-    <header> 
+    <!-- <header>
         <h3>{{__('messages.header')}}</h3>
         <style>
             header {
@@ -23,11 +23,11 @@
                 margin-bottom: 8px;
             }
         </style>
-    </header>
+    </header> -->
 
     @yield('content');
 
-    <footer>
+    <!-- <footer>
         <h3>{{__('messages.footer')}}</h3>
         <style>
             footer {
@@ -38,7 +38,7 @@
                 margin-top: 8px;
             }
         </style>
-    </footer>
+    </footer> -->
 
 </body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
