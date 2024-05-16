@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class TestUser extends Model
 {
+    use HasFactory;
+
+    
     public $timestamps = false;
-    protected $table = 'user'; // Assuming the table name is 'user'
     protected $primaryKey = 'user_name';
     protected $fillable = [
         'full_name',
